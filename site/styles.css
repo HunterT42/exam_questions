@@ -3,10 +3,12 @@
 body {
   background-color: #E0FFFF;
 }
-h2{
+
+h2 {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
 img {
   width: 375px;
   height: 330px;
@@ -17,18 +19,30 @@ p {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
-ul{
+
+ul {
   list-style: none;
 }
-li{
-font-size: 16px;
-padding: 10px 5px 5px 0;
-font-family: 'Open Sans', sans-serif;
+
+li {
+  font-size: 16px;
+  padding: 10px 5px 5px 0;
+  font-family: 'Open Sans', sans-serif;
 }
+
+button {
+  margin-left: 385px;
+}
+
 .main_block {
   width: 900px;
   height: auto;
   border: 1px solid black;
   margin: 0 auto;
   background-color: white;
+}
+
+.all_questions {
+  width: 900px;
+  height: auto;
 }
