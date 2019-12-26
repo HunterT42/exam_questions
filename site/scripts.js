@@ -2,16 +2,9 @@ function getRandomInRange(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-// kek.onclick = el;
-
-// var el = document.querySelector('.questions');
-//
-// el.innerHTML = '<p>' + encodedMessage + '</p>' + el.innerHTML;
-
-
-
 
 //1
+
 var questionOne = [
  '0',
  '1. Развитие языков программирования. Обзор языков программирования. Области применения языков программирования',
@@ -33,7 +26,7 @@ var questionOne = [
 ];
 
 var encodedMessageOne = [ ];
-encodedMessageOne[0] = getRandomInRange(1, 16);
+encodedMessageOne.push(getRandomInRange(1, 16));
 console.log(encodedMessageOne);
 
 var decodedMessageOne = '';
@@ -62,7 +55,7 @@ var questionTwo = [
 ];
 
 var encodedMessageTwo = [ ];
-encodedMessageTwo[0] = getRandomInRange(1, 10);
+encodedMessageTwo.push(getRandomInRange(1, 10));
 console.log(encodedMessageTwo);
 
 var decodedMessageTwo = '';
@@ -90,7 +83,7 @@ var questionThree = [
 ];
 
 var encodedMessageThree = [ ];
-encodedMessageThree[0] = getRandomInRange(1, 10);
+encodedMessageThree.push(getRandomInRange(1, 10));
 console.log(encodedMessageThree);
 
 var decodedMessageThree = '';
@@ -99,3 +92,17 @@ for(var i = 0; i <= encodedMessageThree.length - 1; i++){
   decodedMessageThree += questionThree[encodedMessageThree[i]];
   }
 console.log(decodedMessageThree);
+
+kek.onclick = lasagna;
+
+
+function lasagna (){
+    var el = document.querySelector('.all_questions');
+    el.innerHTML = '<p class="boldp">' + 'Первый вопрос:<br>' + '</p>' + '<p>' + decodedMessageOne + '</p>' + '<p class="boldp">' + '<br>Второй вопрос:<br>' + '</p>' + '<p>' + decodedMessageTwo + '</p>' +'<p class="boldp">' + '<br>Третий вопрос:<br>'+ '</p>'+ '<p>' + decodedMessageThree + '</p>';
+};
+
+kekus.onclick = reload;
+
+function reload () {
+  location.reload();
+};
