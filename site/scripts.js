@@ -198,7 +198,6 @@ var all_questions = [{
   }
 ];
 
-
 var questions = [questionOne = [], questionTwo = [], questionThree = []];
 var deMessages = [decodedMessageOne = '', decodedMessageTwo = '', decodedMessageThree = ''];
 var enMessages = [encodedMessageOne = [], encodedMessageTwo = [], encodedMessageThree = []];
@@ -214,10 +213,9 @@ function pushingFunction(categoryOfNumber, whereToPush) {
   }
 }
 //рандомайзер
-function randomNumber(encMessage,questionNumberTo) {
-  encMessage.push(getRandomInRange(0, (questionNumberTo.length - 1)));
+function randomNumber(whatPush,questionNumberTo) {
+  whatPush.push(getRandomInRange(0, (questionNumberTo.length - 1)));
 };
-
 
                                     //Вывод первого вопроса
 pushingFunction(categoryNumber[0],questions[0]);
