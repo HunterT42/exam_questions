@@ -201,55 +201,61 @@ var all_questions = [{
 var questionOne = [];
 var questionTwo = [];
 var questionThree = [];
+var questions = [questionOne, questionTwo, questionThree]
 var decodedMessageOne = '';
 var decodedMessageTwo = '';
 var decodedMessageThree = '';
+var deMessages = [decodedMessageOne, decodedMessageTwo, decodedMessageThree];
+var encodedMessageOne = [ ];
+var encodedMessageTwo = [ ];
+var encodedMessageThree = [ ];
+var enMessages = [encodedMessageOne, encodedMessageTwo, encodedMessageThree];
 
 var categoryNumber = [0, 1, 2];
 
                                     //Вывод первого вопроса
 for (var i = 0; i < all_questions.length; i++) {
   if (all_questions[i].category == categoryNumber[0]) {
-    questionOne.push(all_questions[i]);
+    questions[0].push(all_questions[i]);
   }
 }
 
-var encodedMessageOne = [ ];
-encodedMessageOne.push(getRandomInRange(0, (questionOne.length - 1)));
+
+enMessages[0].push(getRandomInRange(0, (questions[0].length - 1)));
 console.log(getRandomInRange(0, 15));
 
 
 
-for(var i = 0; i <= encodedMessageOne.length - 1; i++){
-  decodedMessageOne += questionOne[encodedMessageOne[i]].name;
+for(var i = 0; i <= enMessages[0].length - 1; i++){
+  deMessages[0] += questions[0][enMessages[0][i]].name;
   }
                                       //Вывод второго вопроса
 for (var i = 0; i < all_questions.length; i++) {
   if (all_questions[i].category == categoryNumber[1]) {
-    questionTwo.push(all_questions[i]);
+    questions[1].push(all_questions[i]);
   }
 }
-var encodedMessageTwo = [ ];
-encodedMessageTwo.push(getRandomInRange(0, (questionTwo.length - 1)));
+
+enMessages[1].push(getRandomInRange(0, (questions[1].length - 1)));
 
 
 
-for(var i = 0; i <= encodedMessageTwo.length - 1; i++){
-  decodedMessageTwo += questionTwo[encodedMessageTwo[i]].name;
+for(var i = 0; i <= enMessages[1].length - 1; i++){
+  deMessages[1] += questions[1][enMessages[1][i]].name;
   }
-//Вывод третьего вопроса
+                                      //Вывод третьего вопроса
 for (var i = 0; i < all_questions.length; i++) {
   if (all_questions[i].category == categoryNumber[2]) {
-    questionThree.push(all_questions[i]);
+    questions[2].push(all_questions[i]);
   }
 }
-var encodedMessageThree = [ ];
-encodedMessageThree.push(getRandomInRange(0, (questionThree.length - 1)));
+
+enMessages[2].push(getRandomInRange(0, (questions[2].length - 1)));
 
 
 
-for(var i = 0; i <= encodedMessageThree.length - 1; i++){
-  decodedMessageThree += questionThree[encodedMessageThree[i]].name;
+for(var i = 0; i <= enMessages[2].length - 1; i++){
+  deMessages[2] += questions[2][enMessages[2][i]].name;
   }
 
 
@@ -257,7 +263,8 @@ kek.onclick = lasagna;
 
 function lasagna (){
     var el = document.querySelector('.all_questions');
-    el.innerHTML = '<p class="boldp">' + 'Первый вопрос:<br>' + '</p>' + '<p>' + decodedMessageOne + '</p>' + '<p class="boldp">' + '<br>Второй вопрос:<br>' + '</p>' + '<p>' + decodedMessageTwo + '</p>' +'<p class="boldp">' + '<br>Третий вопрос:<br>'+ '</p>'+ '<p>'+ decodedMessageThree  + '</p>';
+    el.innerHTML = '<p class="boldp">' + 'Первый вопрос:<br>' + '</p>' + '<p>' + deMessages[0] + '</p>' + '<p class="boldp">' + '<br>Второй вопрос:<br>' + '</p>' + '<p>' + deMessages[1] + '</p>' +'<p class="boldp">' + '<br>Третий вопрос:<br>'+ '</p>'+ '<p>'+ deMessages[2]  +
+    '</p>';
 };
 
 kekus.onclick = reload;
