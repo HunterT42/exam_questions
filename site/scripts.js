@@ -230,7 +230,7 @@ for (var i = 0; i < all_questions.length; i++) {
   }
 }
 var encodedMessageTwo = [ ];
-encodedMessageTwo.push(getRandomInRange(0, 9));
+encodedMessageTwo.push(getRandomInRange(0, (questionTwo.length - 1)));
 
 
 
@@ -244,7 +244,7 @@ for (var i = 0; i < all_questions.length; i++) {
   }
 }
 var encodedMessageThree = [ ];
-encodedMessageThree.push(getRandomInRange(0, 9));
+encodedMessageThree.push(getRandomInRange(0, (questionThree.length - 1)));
 
 
 
