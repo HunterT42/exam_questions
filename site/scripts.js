@@ -213,11 +213,16 @@ function pushingFunction(categoryOfNumber, whereToPush) {
     }
   }
 }
+//рандомайзер
+function randomNumber(encMessage,questionNumberTo) {
+  encMessage.push(getRandomInRange(0, (questionNumberTo.length - 1)));
+};
+
 
                                     //Вывод первого вопроса
 pushingFunction(categoryNumber[0],questions[0]);
 
-enMessages[0].push(getRandomInRange(0, (questions[0].length - 1)));
+randomNumber(enMessages[0], questions[0]);
 
 for(var i = 0; i <= enMessages[0].length - 1; i++){
   deMessages[0] += questions[0][enMessages[0][i]].name;
@@ -226,7 +231,7 @@ for(var i = 0; i <= enMessages[0].length - 1; i++){
 
 pushingFunction(categoryNumber[1],questions[1]);
 
-enMessages[1].push(getRandomInRange(0, (questions[1].length - 1)));
+randomNumber(enMessages[1], questions[1]);
 
 for(var i = 0; i <= enMessages[1].length - 1; i++){
   deMessages[1] += questions[1][enMessages[1][i]].name;
@@ -235,7 +240,7 @@ for(var i = 0; i <= enMessages[1].length - 1; i++){
 
 pushingFunction(categoryNumber[2],questions[2]);
 
-enMessages[2].push(getRandomInRange(0, (questions[2].length - 1)));
+randomNumber(enMessages[2], questions[2]);
 
 for(var i = 0; i <= enMessages[2].length - 1; i++){
   deMessages[2] += questions[2][enMessages[2][i]].name;
