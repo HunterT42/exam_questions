@@ -213,9 +213,10 @@ for (var i = 0; i < all_questions.length; i++) {
     questionOne.push(all_questions[i]);
   }
 }
+
 var encodedMessageOne = [ ];
-encodedMessageOne.push(getRandomInRange(0, (all_questions.length - 1)));
-console.log(getRandomInRange(0, 15))
+encodedMessageOne.push(getRandomInRange(0, (questionOne.length - 1)));
+console.log(getRandomInRange(0, 15));
 
 
 
