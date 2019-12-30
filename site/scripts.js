@@ -199,7 +199,7 @@ var all_questions = [{
 ];
 
 
-var questions = [questionOne = [], questionTwo = [], questionThree = []]
+var questions = [questionOne = [], questionTwo = [], questionThree = []];
 var deMessages = [decodedMessageOne = '', decodedMessageTwo = '', decodedMessageThree = ''];
 var enMessages = [encodedMessageOne = [], encodedMessageTwo = [], encodedMessageThree = []];
 
@@ -213,6 +213,7 @@ function pushingFunction(categoryOfNumber, whereToPush) {
     }
   }
 }
+
                                     //Вывод первого вопроса
 pushingFunction(categoryNumber[0],questions[0]);
 
