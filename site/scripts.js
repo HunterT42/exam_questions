@@ -1,3 +1,4 @@
+
 var categories = [{
     index: 0,
     name: 'Вопросы общего цикла'
@@ -256,7 +257,7 @@ function soc() {
 }
 
 function lasagna (){
-    var el = document.querySelector('.all_questions');
+    var el = document.getElementById('all_questions');
     el.innerHTML = '<p class="hotbob">' + sosige+ '</p>' + '<p class="boldp">' + 'Первый вопрос:<br>' + '</p>' + '<p>' + deMessages[0] + '</p>' + '<p class="boldp">' + '<br>Второй вопрос:<br>' + '</p>' + '<p>' + deMessages[1] + '</p>' +'<p class="boldp">' + '<br>Третий вопрос:<br>'+ '</p>'+ '<p>'+ deMessages[2]  +  '</p>' ;
     document.getElementById('kek').hidden = true;
     document.getElementById('kekus').hidden = false;
@@ -265,5 +266,7 @@ function lasagna (){
 };
 
 function reload () {
+  document.getElementById('kekus').hidden = true;
+  window.print();
   location.reload();
 };
