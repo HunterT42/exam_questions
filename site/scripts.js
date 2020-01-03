@@ -1,7 +1,3 @@
-function getRandomInRange(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
 var categories = [{
     index: 0,
     name: 'Вопросы общего цикла'
@@ -198,11 +194,14 @@ var all_questions = [{
   }
 ];
 
+
+function getRandomInRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 var questions = [questionOne = [], questionTwo = [], questionThree = []];
 var deMessages = [decodedMessageOne = '', decodedMessageTwo = '', decodedMessageThree = ''];
 var enMessages = [encodedMessageOne = [], encodedMessageTwo = [], encodedMessageThree = []];
-
-var categoryNumber = [0, 1, 2];
 
 //функция для пуша
 function pushingFunction(categoryOfNumber, whereToPush) {
@@ -217,44 +216,53 @@ function randomNumber(whatPush,questionNumberTo) {
   whatPush.push(getRandomInRange(0, (questionNumberTo.length - 1)));
 };
 
-                                    //Вывод первого вопроса
-pushingFunction(categoryNumber[0],questions[0]);
+//генерация вопросов
+function legitFunc(number) {
+  pushingFunction(categories[number].index, questions[number]);
 
-randomNumber(enMessages[0], questions[0]);
+  randomNumber(enMessages[number], questions[number]);
 
-for(var i = 0; i <= enMessages[0].length - 1; i++){
-  deMessages[0] += questions[0][enMessages[0][i]].name;
-  }
-                                      //Вывод второго вопроса
+  for(var i = 0; i <= enMessages[number].length - 1; i++){
+    deMessages[number] += questions[number][enMessages[number][i]].name;
+    }
+}
 
-pushingFunction(categoryNumber[1],questions[1]);
+//Вывод первого вопроса
 
-randomNumber(enMessages[1], questions[1]);
+legitFunc(0);
 
-for(var i = 0; i <= enMessages[1].length - 1; i++){
-  deMessages[1] += questions[1][enMessages[1][i]].name;
-  }
-                                      //Вывод третьего вопроса
+//Вывод второго вопроса
 
-pushingFunction(categoryNumber[2],questions[2]);
+legitFunc(1);
 
-randomNumber(enMessages[2], questions[2]);
+//Вывод третьего вопроса
 
-for(var i = 0; i <= enMessages[2].length - 1; i++){
-  deMessages[2] += questions[2][enMessages[2][i]].name;
-  }
+legitFunc(2);
 
 //кнопки и все такое
+document.getElementById('kek').hidden = true;
+document.getElementById('kekus').hidden = true;
 
+tts.onclick = soc;
 kek.onclick = lasagna;
+kekus.onclick = reload;
+
+var sosige = '';
+function soc() {
+ sosige = document.getElementById('studentName').value;
+ document.getElementById('inputname').hidden = true;
+ document.getElementById('kek').hidden = false;
+
+}
 
 function lasagna (){
     var el = document.querySelector('.all_questions');
-    el.innerHTML = '<p class="boldp">' + 'Первый вопрос:<br>' + '</p>' + '<p>' + deMessages[0] + '</p>' + '<p class="boldp">' + '<br>Второй вопрос:<br>' + '</p>' + '<p>' + deMessages[1] + '</p>' +'<p class="boldp">' + '<br>Третий вопрос:<br>'+ '</p>'+ '<p>'+ deMessages[2]  +
-    '</p>';
-};
+    el.innerHTML = '<p class="hotbob">' + sosige+ '</p>' + '<p class="boldp">' + 'Первый вопрос:<br>' + '</p>' + '<p>' + deMessages[0] + '</p>' + '<p class="boldp">' + '<br>Второй вопрос:<br>' + '</p>' + '<p>' + deMessages[1] + '</p>' +'<p class="boldp">' + '<br>Третий вопрос:<br>'+ '</p>'+ '<p>'+ deMessages[2]  +  '</p>' ;
+    document.getElementById('kek').hidden = true;
+    document.getElementById('kekus').hidden = false;
 
-kekus.onclick = reload;
+
+};
 
 function reload () {
   location.reload();

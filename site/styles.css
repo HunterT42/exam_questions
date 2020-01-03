@@ -48,7 +48,7 @@ button {
 .all_questions {
   width: 900px;
   height: auto;
-
+  
 }
 .boldp{
   color: red;
@@ -57,4 +57,27 @@ button {
   width: 200px;
   height: 30px;
   margin-left: 350px;
+}
+.everything{
+  width: 100%;
+  height: auto;
+  border-top: 1px solid black;
+  padding-top: 20px;
+}
+.nameInput {
+font-family: 'Open Sans', sans-serif;
+text-decoration: underline;
+font-size: 20px;
+}
+input {
+  width: 220px;
+  height: 20px;
+  font-size: 20px;
+}
+.hotbob {
+  font-size: 24px;
+}
+.inputname{
+  width: 100%;
+  height: auto;
 }
