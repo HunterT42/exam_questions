@@ -241,29 +241,22 @@ legitFunc(1);
 legitFunc(2);
 
 //кнопки и все такое
-document.getElementById('kek').hidden = true;
 document.getElementById('kekus').hidden = true;
 document.getElementById('nextStudent').hidden = true;
 
-tts.onclick = soc;
-kek.onclick = lasagna;
+tts.onclick = lasagna;
 kekus.onclick = reload;
 nextStudent.onclick = blabla;
 
 var sosige = '';
-function soc() {
- sosige = document.getElementById('studentName').value;
- document.getElementById('inputname').hidden = true;
- document.getElementById('kek').hidden = false;
-
-};
 
 function lasagna (){
+    sosige = document.getElementById('studentName').value;
+    document.getElementById('inputname').hidden = true;
     var el = document.getElementById('all_questions');
     el.innerHTML = '<p class="hotbob">' + sosige + '</p>' + '<p class="boldp">' + 'Первый вопрос:<br>' + '</p>' + '<p>' + deMessages[0] + '</p>' + '<p class="boldp">' + '<br>Второй вопрос:<br>' + '</p>' + '<p>' + deMessages[1] + '</p>' +'<p class="boldp">' + '<br>Третий вопрос:<br>'+ '</p>'+ '<p>'+ deMessages[2]  +  '</p>' ;
-    document.getElementById('kek').hidden = true;
     document.getElementById('kekus').hidden = false;
-  document.getElementById('nextStudent').hidden = false;
+    document.getElementById('nextStudent').hidden = false;
 
 };
 
@@ -278,3 +271,12 @@ function reload () {
 function blabla() {
   location.reload();
 };
+
+document.addEventListener('keydown', logKey);
+
+function logKey(e) {
+  console.log(e.code);
+  if (e.code == 'Enter') {
+    lasagna();
+  }
+}
