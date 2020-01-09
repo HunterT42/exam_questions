@@ -243,10 +243,12 @@ legitFunc(2);
 //кнопки и все такое
 document.getElementById('kek').hidden = true;
 document.getElementById('kekus').hidden = true;
+document.getElementById('nextStudent').hidden = true;
 
 tts.onclick = soc;
 kek.onclick = lasagna;
 kekus.onclick = reload;
+nextStudent.onclick = blabla;
 
 var sosige = '';
 function soc() {
@@ -254,19 +256,25 @@ function soc() {
  document.getElementById('inputname').hidden = true;
  document.getElementById('kek').hidden = false;
 
-}
+};
 
 function lasagna (){
     var el = document.getElementById('all_questions');
-    el.innerHTML = '<p class="hotbob">' + sosige+ '</p>' + '<p class="boldp">' + 'Первый вопрос:<br>' + '</p>' + '<p>' + deMessages[0] + '</p>' + '<p class="boldp">' + '<br>Второй вопрос:<br>' + '</p>' + '<p>' + deMessages[1] + '</p>' +'<p class="boldp">' + '<br>Третий вопрос:<br>'+ '</p>'+ '<p>'+ deMessages[2]  +  '</p>' ;
+    el.innerHTML = '<p class="hotbob">' + sosige + '</p>' + '<p class="boldp">' + 'Первый вопрос:<br>' + '</p>' + '<p>' + deMessages[0] + '</p>' + '<p class="boldp">' + '<br>Второй вопрос:<br>' + '</p>' + '<p>' + deMessages[1] + '</p>' +'<p class="boldp">' + '<br>Третий вопрос:<br>'+ '</p>'+ '<p>'+ deMessages[2]  +  '</p>' ;
     document.getElementById('kek').hidden = true;
     document.getElementById('kekus').hidden = false;
-
+  document.getElementById('nextStudent').hidden = false;
 
 };
 
 function reload () {
   document.getElementById('kekus').hidden = true;
+  document.getElementById('nextStudent').hidden = true;
   window.print();
+  document.getElementById('nextStudent').hidden = false;
+  document.getElementById('kekus').hidden = false;
+
+};
+function blabla() {
   location.reload();
 };
